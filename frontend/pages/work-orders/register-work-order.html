@@ -1,40 +1,50 @@
 <!-- Estrutura do Modal, será utilizado futuramente para abrir na tela de ordens de serviço ao clicar no botão Nova -->
 
-<section>
-        <h2>Cadastro de Ordem de Serviço</h2>
-        <form>
+<dialog id="workOrderForm">
+
+        <h2 id="modalTitle"></h2>Cadastro de Ordem de Serviço</h2>
+
+        <form id="workOrderForm">
             <label for="subject">Assunto</label>
             <select id="subject">
                 <option>Assunto teste mock</option>
             </select>
 
-            <label for="equipaments">Equipamento</label>
-            <select id="equipaments">
+            <label for="equipments">Equipamento</label>
+            <select id="equipments" name="equipments">
                 <option>Equipamento teste mock</option>
             </select>
             
             <label for="status">Status</label>
-            <select id="status">
-                <option>Aberta</option>
-                <option>Em andamento</option>
-                <option>Concluída</option>
+            <select id="status" name="status">
+                <option value="open">Aberta</option>
+                <option value="in_progress">Em andamento</option>
+                <option value="completed">Concluída</option>
             </select>
 
             <label for="priority">Prioridade</label>
-            <select id="priority">
-                <option>Baixa</option>
-                <option>Média</option>
-                <option>Alta</option>
-                <option>Crítica</option>
+            <select id="priority" name="priority">
+                <option value="low">Baixa</option>
+                <option value="medium">Média</option>
+                <option value="high">Alta</option>
+                <option value="criticism">Crítica</option>
             </select>
             
             <label for="dateHour">Data/Hora</label>
-            <input type="datetime-local"
+            <input type="datetime-local" name="dateHour"
                     id="dateHour"
                     name="dateHour">
 
-            <button type="submit">Criar</button>
-            <button type="button">Cancelar</button>
+            <button
+                id="btnSubmit"
+                type="submit">
+                Criar
+            </button>
+            <button 
+                id="btnCancel"
+                type="button">
+                Cancelar
+            </button>
 
         </form>
-</section>
+</dialog>
