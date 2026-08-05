@@ -1,6 +1,6 @@
-<!-- Estrutura do Modal, será utilizado futuramente para abrir na tela de ordens de serviço ao clicar no botão Nova -->
+<!-- Estrutura do Modal, um dialog será para a criação de uma nova O.S e edição, outro dialog será para um modal de exclusão da O.S -->
 
-<dialog id="workOrderForm">
+<dialog id="workOrderModal">
 
         <h2 id="modalTitle"></h2>Cadastro de Ordem de Serviço</h2>
 
@@ -47,4 +47,16 @@
             </button>
 
         </form>
+</dialog>
+
+<dialog id="deleteWorkOrderModal">
+
+    <h2>Excluir ordem de serviço</h2>
+
+    <p id="deleteMessage">Tem certeza que deseja excluir esta ordem de serviço?
+    </p>
+
+    <button id="btnCancelDelete" type="button">Cancelar</button>
+    <button id="btnConfirmDelete" type="button">Excluir</button>
+
 </dialog>
