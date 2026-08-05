@@ -1,11 +1,40 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nova</title>
-</head>
-<body>
-    
-</body>
-</html>
+<!-- Estrutura do Modal, será utilizado futuramente para abrir na tela de ordens de serviço ao clicar no botão Nova -->
+
+<section>
+        <h2>Cadastro de Ordem de Serviço</h2>
+        <form>
+            <label for="subject">Assunto</label>
+            <select id="subject">
+                <option>Assunto teste mock</option>
+            </select>
+
+            <label for="equipaments">Equipamento</label>
+            <select id="equipaments">
+                <option>Equipamento teste mock</option>
+            </select>
+            
+            <label for="status">Status</label>
+            <select id="status">
+                <option>Aberta</option>
+                <option>Em andamento</option>
+                <option>Concluída</option>
+            </select>
+
+            <label for="priority">Prioridade</label>
+            <select id="priority">
+                <option>Baixa</option>
+                <option>Média</option>
+                <option>Alta</option>
+                <option>Crítica</option>
+            </select>
+            
+            <label for="dateHour">Data/Hora</label>
+            <input type="datetime-local"
+                    id="dateHour"
+                    name="dateHour">
+
+            <button type="submit">Criar</button>
+            <button type="button">Cancelar</button>
+
+        </form>
+</section>
