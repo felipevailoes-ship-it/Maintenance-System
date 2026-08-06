@@ -1,0 +1,57 @@
+<!-- Estrutura do Modal, um dialog será para a criação de um novo equipamento e edição, outro dialog será para um modal de exclusão do equipamento -->
+
+<dialog id="equipmentsModal">
+
+        <h2 id="modalTitle"></h2>Cadastro de Equipamento</h2>
+
+        <form id="equipmentsForm">
+            <label for="name">Nome do equipamento</label>
+            <select id="name">
+                <option>Equipamento teste mock</option>
+            </select>
+
+            <label for="categories">Categorias</label>
+            <select id="categories" name="categories">
+                <option>Categoria teste mock</option>
+            </select>
+            
+            <label for="serialNumber">Número de série</label>
+            <select id="serialNumber">
+                <option>Número de série teste mock</option>
+            </select>
+
+            <label for="description">Descrição</label>
+            <select id="description">
+                <option>Descrição teste mock</option>
+            </select>
+            
+            <label for="dateHour">Data/Hora</label>
+            <input type="datetime-local" name="dateHour"
+                    id="dateHour"
+                    name="dateHour">
+
+            <button
+                id="btnSubmit"
+                type="submit">
+                Criar
+            </button>
+            <button 
+                id="btnCancel"
+                type="button">
+                Cancelar
+            </button>
+
+        </form>
+</dialog>
+
+<dialog id="deleteEquipmentModal">
+
+    <h2>Excluir equipamento</h2>
+
+    <p id="deleteMessage">Tem certeza que deseja excluir este equipamento?
+    </p>
+
+    <button id="btnCancelDelete" type="button">Cancelar</button>
+    <button id="btnConfirmDelete" type="button">Excluir</button>
+
+</dialog>
