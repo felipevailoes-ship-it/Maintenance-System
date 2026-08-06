@@ -1,0 +1,45 @@
+<dialog id="categoriesModal">
+
+    <h2 id="modalTitle"></h2>Cadastro de Categorias</h2>
+
+    <form id="categoriesForm">
+        <label for="name">Nome da categoria</label>
+        <select id="name">
+            <option>Categoria teste mock</option>
+        </select>
+
+        <label for="description">Descrição</label>
+        <select id="description">
+            <option>Descrição categoria teste mock</option>
+        </select>
+        
+        <label for="dateHour">Data/Hora</label>
+        <input type="datetime-local" name="dateHour"
+                id="dateHour"
+                name="dateHour">
+
+        <button
+            id="btnSubmit"
+            type="submit">
+            Criar
+        </button>
+        <button 
+            id="btnCancel"
+            type="button">
+            Cancelar
+        </button>
+
+    </form>
+</dialog>
+
+<dialog id="deleteCategoriesModal">
+
+    <h2>Excluir categoria</h2>
+
+        <p id="deleteMessage">Tem certeza que deseja excluir esta categoria?
+        </p>
+
+    <button id="btnCancelDelete" type="button">Cancelar</button>
+    <button id="btnConfirmDelete" type="button">Excluir</button>
+
+</dialog>
