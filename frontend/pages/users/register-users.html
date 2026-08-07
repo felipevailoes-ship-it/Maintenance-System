@@ -1,37 +1,55 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - Sistema de Manutenção</title>
-</head>
-    <body>
-        <header>
-            <h1>Sistema de Controle de Manutenção</h1>
-        </header>
+<dialog id="usersModal">
 
-        <main>
-            <h2>Cadastro de Usuário</h2>
-        <form>
-            <label for="name">Nome completo</label>
-            <input type="text" id="name" name="name" required>
+    <h2 id="modalTitle"></h2>Cadastro de Usuário</h2>
 
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required>
+    <form id="usersForm">
+        <label for="name">Nome</label>
+        <select id="name">
+            <option>Nome teste mock</option>
+        </select>
 
-            <label for="password">Senha</label>
-            <input type="password" id="password" name="password" required>
+        <label for="email">E-mail</label>
+        <select id="email">
+            <option>E-mail teste mock</option>
+        </select>
 
-            <label for="confirmPassword">Confirmar Senha</label>
-            <input type="password" id="confirmPassword" name="confirmPassword" required>
+         <label for="password">Senha</label>
+        <select id="email">
+            <option>Senha teste mock</option>
+        </select>
 
-            <button type="submit">Salvar</button>
-            <button type="reset">Cancelar</button>
-        </form>
-        </main>
+        <label for="status">Status</label>
+        <select id="email">
+            <option>Status teste mock</option>
+        </select>
+        
+        <label for="dateHour">Data/Hora</label>
+        <input type="datetime-local" name="dateHour"
+                id="dateHour"
+                name="dateHour">
 
-        <footer>
-        <p>2026 Sistema de Controle e Manutenção de Equipamentos ADS20260000</p>
-        </footer>
-    </body>
-</html>
+        <button
+            id="btnSubmit"
+            type="submit">
+            Criar
+        </button>
+        <button 
+            id="btnCancel"
+            type="button">
+            Cancelar
+        </button>
+
+    </form>
+</dialog>
+
+<dialog id="deleteUsersModal">
+
+    <h2>Excluir usuário</h2>
+
+        <p id="deleteMessage">Tem certeza que deseja excluir este usuário?
+        </p>
+
+    <button id="btnCancelDelete" type="button">Cancelar</button>
+    <button id="btnConfirmDelete" type="button">Excluir</button>
+
+</dialog>
