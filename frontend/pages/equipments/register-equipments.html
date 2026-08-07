@@ -2,13 +2,11 @@
 
 <dialog id="equipmentsModal">
 
-        <h2 id="modalTitle"></h2>Cadastro de Equipamento</h2>
+        <h2 id="modalTitle">Cadastro de Equipamento</h2>
 
         <form id="equipmentsForm">
             <label for="name">Nome do equipamento</label>
-            <select id="name">
-                <option>Equipamento teste mock</option>
-            </select>
+            <input type="text" id="name" name="name" required>
 
             <label for="categories">Categorias</label>
             <select id="categories" name="categories">
@@ -16,19 +14,13 @@
             </select>
             
             <label for="serialNumber">Número de série</label>
-            <select id="serialNumber">
-                <option>Número de série teste mock</option>
-            </select>
+            <input type="text" id="serialNumber" name="serialNumber" required>
 
             <label for="description">Descrição</label>
-            <select id="description">
-                <option>Descrição teste mock</option>
-            </select>
+            <input type="text" id="description" name="description" required>
             
             <label for="dateHour">Data/Hora</label>
-            <input type="datetime-local" name="dateHour"
-                    id="dateHour"
-                    name="dateHour">
+            <input type="datetime-local" id="dateHour" name="dateHour">
 
             <button
                 id="btnSubmit"
