@@ -1,0 +1,7 @@
+/* variaveis globais */
+:root {
+    --primary-color-ms:rgb(0, 0, 0);
+    --background-color-ms:rgb(255, 255, 255)0;
+    --text-color-ms:rgba(253, 126, 7, 0.979);
+    --sidebar-widht:250px;
+}
