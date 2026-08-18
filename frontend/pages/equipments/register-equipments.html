@@ -8,16 +8,24 @@
             <label for="name">Nome do equipamento</label>
             <input type="text" id="name" name="name" required>
 
+            <label for="assetTag">Patrimônio</label>
+            <input type="text" id="assetTag" name="name" required>
+
             <label for="categories">Categorias</label>
             <select id="categories" name="categories">
                 <option>Categoria teste mock</option>
             </select>
             
-            <label for="serialNumber">Número de série</label>
-            <input type="text" id="serialNumber" name="serialNumber" required>
+           <label for="location">Local</label>
+            <select id="location" name="location">
+                <option>Local teste mock</option>
+            </select>
 
-            <label for="description">Descrição</label>
-            <input type="text" id="description" name="description" required>
+            <label for="status">Status</label>
+        <select id="status">
+            <option value="active">Ativo</option>
+            <option value="inactive">Inativo</option>
+        </select>
 
             <button
                 id="btnSubmit"
