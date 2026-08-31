@@ -1,0 +1,49 @@
+<dialog id="locationsModal">
+
+        <h2 id="modalTitle">Cadastro de Local</h2>
+
+        <form id="locationsForm">
+            <label for="name">Nome do local</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="CEP">CEP</label>
+            <input type="text" id="CEP" name="name" required>
+
+             <button id="btnCEP" type="button">Buscar CEP</button>
+
+            <label for="address">Endereço</label>
+            <input type="text" id="address" name="name" required>
+            
+           <label for="city">Cidade</label>
+            <input type="text" id="city" name="name" required>
+
+            <label for="state">Estado</label>
+            <select id="state" name="state">
+                <option>Estado teste mock</option>
+            </select>
+
+            <button
+                id="btnSubmit"
+                type="submit">
+                Criar
+            </button>
+            <button 
+                id="btnCancel"
+                type="button">
+                Cancelar
+            </button>
+
+        </form>
+</dialog>
+
+<dialog id="deleteLocationModal">
+
+    <h2>Excluir Local</h2>
+
+    <p id="deleteMessage">Tem certeza que deseja excluir este local?
+    </p>
+
+    <button id="btnCancelDelete" type="button">Cancelar</button>
+    <button id="btnConfirmDelete" type="button">Excluir</button>
+
+</dialog>
