@@ -4,39 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Locais - Sistema de Controle de Manutenção</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/forms.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-    <body>
-        <header>
-            <h1>Locais</h1>
-        </header>
-        <main>
-            <section>
-                    <nav>
-                <button type="button">Nova</button>
-                <button type="button">Editar</button>
-                <button type="button">Excluir</button>
+     <body class="bg-light">
+        <div class="container-fluid">
+            <div class="row">
+                <aside class="col-md-3 col-lg-2 bg-dark text-white min-vh-100">
+                    <h4 class="mb-4">Sistema de controle de Equipamentos</h4>
+                    <nav class="nav flex-column">
+                        <a class="nav-link text-white" href="dashboard.html">Dashboard</a>
+                        <a class="nav-link text-white active" href="grid-equipments.html">Equipamentos</a>
+                        <a class="nav-link text-white" href="grid-categories">Categorias</a>
+                        <a class="nav-link text-white" href="grid-users">Usuários</a>
+                        <a class="nav-link text-white" href="grid-locations">Locais</a>
+                        <a class="nav-link text-white" href="grid-technicians">Técnicos</a>
+                        <a class="nav-link text-white" href="grid-work-orders">Ordens de Serviços</a>
                     </nav>
-            </section>
-
-            <section>
-                <label for="search">Pesquisar</label>
-                <input type="search" id="search" name="search">
-            </section>
-
-            <section>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nome</th>
-                            <th>CEP</th>
-                            <th>Endereço</th>
-                            <th>Cidade</th>
-                            <th>Estado</th>
-                        </tr>
-                    </thead>
-                <!-- Dados mockados para visualização -->
-                    <tbody>
+                </aside>
+        <main class="col-md-9 col-lg-10 p-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <button type="button" class="btn btn-primary">Novo local</button>
+                    <button type="button" class="btn btn-secondary">Editar</button>
+                    <button type="button" class="btn btn-danger">Excluir</button>
+                </div>
+                <div>
+                <label for="search" class="visually-hidden">Pesquisar</label>
+                <input type="search" id="search" name="search" class="form-control" placeholder="Pesquisar...">
+                </div>
+            </div>
+        
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome do local</th>
+                        <th>CEP</th>
+                        <th>Endereço</th>
+                        <th>Cidade</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
                         <tr>
                             <td>01</td>
                             <td>Sala de servidores</td>
@@ -46,11 +58,14 @@
                             <td>SC</td>
                         </tr>
                     </tbody>
-                </table>
-            </section>
+            </table>
         </main>
+    </div>
+</div>
         <footer>
             <p>Sistema de Controle de Manutenção ADS2026</p>
         </footer>
-    </body>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
 </html>
