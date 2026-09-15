@@ -41,23 +41,23 @@ const btnNewEquipment = document.getElementById("btnNewEquipment");
 
 console.log("activeTotal: " + activesTotal.textContent);
 
-function dashboardRefresh() {
+// function dashboardRefresh() {
 
-    const actives = equipments.filter(
-        equipment => equipment.status === "true"
-    ).length;
+//     const actives = equipments.filter(
+//         equipment => equipment.status === "true"
+//     ).length;
 
-    const inMaintenance = equipments.filter(
-        equipment => equipment.status === "maintenance"
-    ).length;
+//     const inMaintenance = equipments.filter(
+//         equipment => equipment.status === "maintenance"
+//     ).length;
 
-    activesTotal.textContent = actives;
-    maintenanceEquipamentsTotal.textContent = inMaintenance;
+//     activesTotal.textContent = actives;
+//     maintenanceEquipamentsTotal.textContent = inMaintenance;
 
-    console.log("Dashboard atualizado");
-}
+//     console.log("Dashboard atualizado");
+// }
 
-dashboardRefresh();
+// dashboardRefresh();
 
 //function equipmentsTableRender(list) {
     //equipmentsTable.innerHTML = "";
@@ -85,3 +85,28 @@ dashboardRefresh();
 btnNewEquipment.addEventListener("click", function () {
     console.log("Tá clicante");
 });
+
+async function dashboardLoad (){
+
+    try{
+        const response = await fetch("http://localhost:3000/dashboard");
+        if(!response.ok){
+            throw new Error("Não deu certo!");
+        }
+
+        const data = await response.json();
+        console.log("Dados recebidos:", data);
+
+        const actives = data.activeEquips;
+        const inMaintenance = data.inMaintenance;
+        const preventiveEquips = data.preventiveMaintenance; 
+
+        activesTotal.textContent = actives;
+        maintenanceEquipamentsTotal.textContent = inMaintenance;
+        preventiveTotal.textContent = preventiveEquips;
+
+    }catch(error){
+        console.error("Erro ao carregar a dashboard: ", error );
+    };
+}
+dashboardLoad();
