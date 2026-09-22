@@ -1,49 +1,57 @@
-<dialog id="locationsModal">
+<dialog id="locationsModal" class="card p-4 shadow col-12 col-md-10 col-lg-8">
 
-        <h2 id="modalTitle">Cadastro de Local</h2>
+    <h2 id="modalTitle">Cadastro de Local</h2>
 
-        <form id="locationsForm">
-            <label for="name">Nome do local</label>
-            <input type="text" id="name" name="name" required>
+    <form id="locationsForm">
 
-            <label for="CEP">CEP</label>
-            <input type="text" id="CEP" name="name" required>
+        <div class="mb-3">
+            <label for="name" class="form-label">Nome do local</label>
+            <input type="text" id="name" name="name" class="form-control" required>
+        </div>
 
-             <button id="btnCEP" type="button">Buscar CEP</button>
+        <div class="mb-3">
+            <label for="CEP" class="form-label">CEP</label>
+            <div class="d-flex gap-2">
+                <input type="text" id="CEP" name="name" class="form-control" required>
+                <button id="btnCEP" type="button" class="btn btn-primary">Buscar CEP</button>
+            </div>
+        </div>
 
-            <label for="address">Endereço</label>
-            <input type="text" id="address" name="name" required>
-            
-           <label for="city">Cidade</label>
-            <input type="text" id="city" name="name" required>
+        <div class="mb-3">
+            <label for="address" class="form-label">Endereço</label>
+            <input type="text" id="address" name="name" class="form-control" required>
+        </div>
 
-            <label for="state">Estado</label>
-            <select id="state" name="state">
-                <option>Estado teste mock</option>
-            </select>
+        <div class="mb-3">
+            <label for="city" class="form-label">Cidade</label>
+            <input type="text" id="city" name="name" class="form-control" required>
+        </div>
 
-            <button
-                id="btnSubmit"
-                type="submit">
+        <div class="mb-3">
+            <label for="state" class="form-label">Estado</label>
+            <input type="text" id="state" name="name" class="form-control" required>
+        </div>
+
+        <div class="d flex justify-content-end gap-2">
+            <button id="btnSubmit" type="submit" class="btn btn-primary">
                 Criar
             </button>
-            <button 
-                id="btnCancel"
-                type="button">
+
+            <button id="btnCancel" type="button" class="btn btn-secondary">
                 Cancelar
             </button>
+        </div>
 
-        </form>
+    </form>
 </dialog>
 
-<dialog id="deleteLocationModal">
-
+<dialog id="deleteLocationModal" class="card p4 shadow col-12 col-md-8 col-lg-6">
     <h2>Excluir Local</h2>
+    <p id="deleteMessage">Tem certeza que deseja excluir este local?</p>
 
-    <p id="deleteMessage">Tem certeza que deseja excluir este local?
-    </p>
-
-    <button id="btnCancelDelete" type="button">Cancelar</button>
-    <button id="btnConfirmDelete" type="button">Excluir</button>
+    <div class="d-flex justify-content-end gap-2">
+        <button id="btnCancelDelete" type="button" class="btn btn-secondary">Cancelar</button>
+        <button id="btnConfirmDelete" type="button" class="btn btn-danger">Excluir</button>
+    </div>
 
 </dialog>

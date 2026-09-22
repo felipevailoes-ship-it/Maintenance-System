@@ -1,38 +1,39 @@
-<dialog id="categoriesModal"
-        class="card p-4 shadow col-12 col-md-10 col-lg-8">
+<dialog id="categoriesModal" class="card p-4 shadow col-12 col-md-10 col-lg-8">
+
     <h2 id="modalTitle">Cadastro de Categorias</h2>
+
     <form id="categoriesForm">
+
         <div class="mb-3">
-        <label for="name" class="form-label">Nome da categoria</label>
-        <input type="text" id="name" name="name" class="form-control" required>
+            <label for="name" class="form-label">Nome da categoria</label>
+            <input type="text" id="name" name="name" class="form-control" required>
         </div>
+
         <div class="mb-3">
-        <label for="description" class="form-label">Descrição</label>
-        <input type="text" id="description" name="description" class="form-control" required>
+            <label for="description" class="form-label">Descrição</label>
+            <input type="text" id="description" name="description" class="form-control" required>
         </div>
+
         <div class="d-flex justify-content-end gap-2">
-        <button
-            id="btnSubmit"
-            type="submit"
-            class="btn btn-primary">
-            Criar
-        </button>
-        <button 
-            id="btnCancel"
-            type="button"
-            class="btn btn-secondary">
-            Cancelar
-        </button>
+            <button id="btnSubmit" type="submit" class="btn btn-primary">
+                Criar
+            </button>
+
+            <button id="btnCancel" type="button" class="btn btn-secondary">
+                Cancelar
+            </button>
         </div>
+
     </form>
 </dialog>
-<dialog id="deleteCategoriesModal"
-        class="card p-4 shadow col-12 col-md-8 col-lg-6">
-    <h2>Excluir categoria</h2>
-        <p id="deleteMessage">Tem certeza que deseja excluir esta categoria?</p>
-    <div class="d-flex justify-content-end gap-2">
 
-    <button id="btnCancelDelete" type="button" class="btn btn-secondary">Cancelar</button>
-    <button id="btnConfirmDelete" type="button" class="btn btn-danger">Excluir</button>
+<dialog id="deleteCategoriesModal" class="card p-4 shadow col-12 col-md-8 col-lg-6">
+    <h2>Excluir categoria</h2>
+    <p id="deleteMessage">Tem certeza que deseja excluir esta categoria?</p>
+
+    <div class="d-flex justify-content-end gap-2">
+        <button id="btnCancelDelete" type="button" class="btn btn-secondary">Cancelar</button>
+        <button id="btnConfirmDelete" type="button" class="btn btn-danger">Excluir</button>
     </div>
+
 </dialog>
