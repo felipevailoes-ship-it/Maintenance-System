@@ -1,23 +1,14 @@
-const equipment = [
-    {
-        id:1,
-        nome: "Compressor",
-        status: "Ativo"
-    }, {
-        id:2,
-        nome: "Gerador 1",
-        status: "Ativo"
-    }, {
-        id:3,
-        nome: "Compressor 5444",
-        status: "Ativo"
-    },
-];
+const equipmentService = require ("../services/equipmentService");
 
-function getAllEquipments(req,res){
-    res.json(equipment);
-};
+async function getAllEquipments(req,res){
+    try{
+        const equipments = await equipmentService.getAllEquipments();
+        res.json(equipments);
+    }catch(error) {
+        console.error("Erro ao buscar equipamentos: ", error);
+        res.status(500).json({message:"Erro ao buscar equipamentos."});
+    }
+}
 
-module.exports = {
-    getAllEquipments
-};
+
+// FAZER O GET EQUIPAMENT BY ID PRONTO
