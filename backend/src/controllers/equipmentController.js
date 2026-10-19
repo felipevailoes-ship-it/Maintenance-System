@@ -10,5 +10,8 @@ async function getAllEquipments(req,res){
     }
 }
 
+module.exports = {
+    getAllEquipments
+};
 
 // FAZER O GET EQUIPAMENT BY ID PRONTO
