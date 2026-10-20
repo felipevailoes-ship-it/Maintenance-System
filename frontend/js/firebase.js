@@ -3,13 +3,13 @@
  import { getAuth } from 'https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js'
   
   const firebaseConfig = {
-    apiKey: "AIzaSyA9hl8lTiqSnOlk_CcgWuLpJzcldkksIqM",
-    authDomain: "erudite-flag-467417-u2.firebaseapp.com",
-    projectId: "erudite-flag-467417-u2",
-    storageBucket: "erudite-flag-467417-u2.firebasestorage.app",
-    messagingSenderId: "681389355186",
-    appId: "1:681389355186:web:030baa705e6a295ad359ab",
-    measurementId: "G-WN4C2PREXM"
+    apiKey: "AIzaSyC9R7iD-hZ_dZ-g0jjDhqKY6Z4QMPFMXuY",
+    authDomain: "maintenance-system-280e6.firebaseapp.com",
+    projectId: "maintenance-system-280e6",
+    storageBucket: "maintenance-system-280e6.firebasestorage.app",
+    messagingSenderId: "1001528731517",
+    appId: "1:1001528731517:web:264c7816c676737bf48e14",
+    measurementId: "G-S2FM7N972N"
   };
 
   // Initialize Firebase

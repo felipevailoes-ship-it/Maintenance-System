@@ -6,7 +6,7 @@ const userInfo = document.querySelector("#userInfo");
 
 onAuthStateChanged(auth, (user)=> {
     if(!user) {
-        window.location.href = "./login.html";
+        window.location.href = "../../index.html";
         return;
     }
 
@@ -16,7 +16,7 @@ onAuthStateChanged(auth, (user)=> {
 logoutButton.addEventListener("click", async () =>{
     try {
         await signOut(auth);
-        window.location.href = "./login.html";
+        window.location.href = "../../index.html";
     } catch (error) {
         console.error("Falha ao sair:", error.code);
         alert("Não foi possível encerrar a sessão, tente novamente.");
