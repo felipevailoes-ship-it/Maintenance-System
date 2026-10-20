@@ -1,4 +1,28 @@
-console.log("não sobra nada");
+import { signOut } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
+import {auth} from "./firebase.js";
+
+const logoutButton = document.querySelector("#logoutButton");
+const userInfo = document.querySelector("#userInfo");
+
+onAuthStateChanged(auth, (user)=> {
+    if(!user) {
+        window.location.href = "./login.html";
+        return;
+    }
+
+    userInfor.textContent = `Usuário: ${user.email}`;
+});
+
+logoutButton.addEventListener("click", async () =>{
+    try {
+        await signOut(auth);
+        window.location.href = "./login.html";
+    } catch (error) {
+        console.error("Falha ao sair:", error.code);
+        alert("Não foi possível encerrar a sessão, tente novamente.");
+    }
+});
+
 
 
 const systemName ="Sistema de controle de manutenção";
