@@ -1,6 +1,6 @@
 import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
 
-import { createdUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
+import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
 
 import { sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
 
@@ -17,13 +17,13 @@ loginForm.addEventListener("submit", async (event)=> {
     event.preventDefault();
 
     const email = emailInput.value.trim();
-    const password = passwordInput.value();
+    const password = passwordInput.value;
 
     feedback.textContent="Validando acesso...";
 
     try{
         await signInWithEmailAndPassword(auth, email, password); 
-        window.location.href = "./dashboard.html";
+        window.location.href = "../dashboard.html";
     } catch(error){
         console.error("Falha no login", error.code);
 
@@ -42,7 +42,7 @@ registerButton.addEventListener("click", async () => {
         }
 
         try {
-            await createdUserWithEmailAndPassword(auth, email, password);
+            await createUserWithEmailAndPassword(auth, email, password);
             feedback.textContent = "Conta criada com sucesso!";
             window.location.href = "./dashboard.html";
 

@@ -1,6 +1,6 @@
  import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
 
- import { getAuth } from 'https://www.gstatic.com/firebasejs/12.11.0/firebase-auth.js'
+ import { getAuth } from 'https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js'
   
   const firebaseConfig = {
     apiKey: "AIzaSyA9hl8lTiqSnOlk_CcgWuLpJzcldkksIqM",
@@ -15,3 +15,5 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
+
+  export { auth }; // deixa o auth disponível para quem fizer o import {auth} from "./firebase.js"
