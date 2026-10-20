@@ -1,8 +1,8 @@
-import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
+import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
 
-import { createdUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
+import { createdUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
 
-import { sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
+import { sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
 
 import {auth} from "./firebase.js";
 

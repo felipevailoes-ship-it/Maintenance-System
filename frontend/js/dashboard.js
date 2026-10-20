@@ -1,4 +1,4 @@
-import { signOut } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
+import { signOut } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
 import {auth} from "./firebase.js";
 
 const logoutButton = document.querySelector("#logoutButton");
