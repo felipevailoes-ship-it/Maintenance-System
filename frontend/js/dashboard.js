@@ -1,12 +1,13 @@
-import { signOut } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
+import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/12.11.0/firebase-auth.js';
+import { signOut } from 'https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js';
 import {auth} from "./firebase.js";
 
 const logoutButton = document.querySelector("#logoutButton");
 const userInfo = document.querySelector("#userInfo");
 
-onAuthStateChanged(auth, (user)=> {
+onAuthStateChanged(auth, async (user)=> {
     if(!user) {
-        window.location.href = "../../index.html";
+        window.location.href = "./index.html";
         return;
     }
 
@@ -134,3 +135,39 @@ async function dashboardLoad (){
     };
 }
 dashboardLoad();
+
+async function loadEquipments(){
+    try {
+        const currentUser = auth.currentUser;
+
+        if (!currentUser) {
+            window.location.href = "../index.html";
+            return;
+        };
+
+        const idToken = await currentUser.getIdToken();
+
+        const response = await fetch(
+            "http://localhost:3000/equipments",
+
+            {
+                headers: { Authorization: "Bearer &{idToken}"
+            }
+        }
+    );
+
+    if(response.status == 401){
+        window.location.href = "./index.html";
+        return;
+    };
+
+    if(response.ok){
+        throw new Error("Falha ao carregar equipamentos.");
+    }
+
+    const equipments = await response.json();
+    equipmentsTableRender(equipments);
+    } catch (error){
+        console.error("Erro ao carregar equipamentos:", error);
+    }
+}

@@ -1,11 +1,9 @@
 const express = require("express");
 const router = express.Router();
+const authenticateToken = require("../middlewares/authenticateToken");
+const {getAllEquipments} = require("../controllers/equipmentController");
 
-const{
-    getAllEquipments
-} = require("../controllers/equipmentController");
-
-router.get("/", getAllEquipments);
+router.get("/", authenticateToken, getAllEquipments);
 //router.get("/:id", getEquipment);
 
-module.exports = router;
+module.exports = router; 

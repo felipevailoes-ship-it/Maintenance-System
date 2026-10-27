@@ -1,6 +1,6 @@
 const {initializeApp, applicationDefault, getApps} = require("firebase-admin/app");
 
-const { getAuth } = reqiored("firebase-admin/auth");
+const { getAuth } = require("firebase-admin/auth");
 
 const firebaseApp = getApps().length
 ? getApps()[0]
