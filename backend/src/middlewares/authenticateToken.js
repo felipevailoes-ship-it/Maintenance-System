@@ -3,7 +3,7 @@ const { firebaseAdminAuth } = require ("../firebaseAdmin");
 async function authenticateToken(req, res, next) {
     const authorization = req.headers.authorization;
 
-    if (!authorization || !authorization.startwith("Bearer ")) {
+    if (!authorization || !authorization.startWith("Bearer ")) {
         return res.status(401).json({
             message:"Autenticação necessária."
         });
