@@ -5,7 +5,7 @@ async function getAllCategories(req,res){
         const categories = await categoryService.getAllCategories();
         res.json(categories);
     }catch(error) {
-        console.error("Erro ao buscar categoriass: ", error);
+        console.error("Erro ao buscar categorias: ", error);
         res.status(500).json({message:"Erro ao buscar categorias."});
     }
 }
@@ -23,7 +23,7 @@ async function getCategoryById(req, res) {
         res.json(category); // se achou devolve a categoria status 200
     } catch (error) {
         console.error("Erro ao buscar categoria: ", error);
-        res.status(500),json({ message: "Erro ao buscar categoria."});
+        res.status(500).json({ message: "Erro ao buscar categoria."});
     }
 }
 
