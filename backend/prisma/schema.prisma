@@ -16,21 +16,123 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
 
-model Equipment {
-  id Int @id @default(autoincrement())
-  name String
-  patrimony String @unique
-  status String 
-  acquisitionDate DateTime?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+enum EquipmentStatus {
+  ACTIVE
+  MAINTENANCE
+  INACTIVE
+}
+
+enum Role {
+  ADMIN
+  TECHNICIAN
+}
+
+enum Priority {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum WorkOrderStatus {
+  OPEN
+  IN_PROGRESS
+  COMPLETED
+}
+
+enum MaintenanceType {
+  PREVENTIVE
+  CORRECTIVE
 }
 
 model Category {
-  id Int @id @default(autoincrement())
-  name String @unique
+  id          Int         @id @default(autoincrement())
+  name        String      @unique
   description String?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  equipments  Equipment[]
+}
+
+model Location {
+  id           Int         @id @default(autoincrement())
+  name         String
+  zipCode      String
+  street       String
+  number       String?
+  complement   String?
+  neighborhood String
+  city         String
+  state        String
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  equipments   Equipment[]
+}
+
+model Equipment {
+  id              Int             @id @default(autoincrement())
+  name            String
+  patrimony       String          @unique
+  status          EquipmentStatus @default(ACTIVE)
+  acquisitionDate DateTime?
+  photoUrl        String?
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+
+  categoryId Int
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+
+  locationId Int
+  location   Location @relation(fields: [locationId], references: [id], onDelete: Restrict)
+
+  workOrders WorkOrder[]
+}
+
+model Technician {
+  id        Int      @id @default(autoincrement())
+  name      String
+  phone     String
+  email     String   @unique
+  specialty String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  workOrders WorkOrder[]
 }
+
+model User {
+  id          Int      @id @default(autoincrement())
+  firebaseUid String   @unique
+  name        String
+  email       String   @unique
+  role        Role     @default(TECHNICIAN)
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  workOrders WorkOrder[]
+}
+
+model WorkOrder {
+  id          Int             @id @default(autoincrement())
+  protocol    String          @unique
+  description String
+  priority    Priority        @default(MEDIUM)
+  status      WorkOrderStatus @default(OPEN)
+  type        MaintenanceType
+  openedAt    DateTime        @default(now())
+  completedAt DateTime?
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+
+  equipmentId Int
+  equipment   Equipment @relation(fields: [equipmentId], references: [id], onDelete: Restrict)
+
+  technicianId Int
+  technician   Technician @relation(fields: [technicianId], references: [id], onDelete: Restrict)
+
+  createdById Int
+  createdBy   User @relation(fields: [createdById], references: [id], onDelete: Restrict)
+}
+
 
